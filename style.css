@@ -337,5 +337,5 @@ body.menu-open .menu-dropdown{ opacity:1; transform:translateY(0); pointer-event
 
 /* Cursor: bandera de Nicaragua (estilizada como franjas azul-blanco-azul) */
 body, * {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="32" height="11" y="0" fill="%230073B5"/><rect width="32" height="10" y="11" fill="%23FFFFFF"/><rect width="32" height="11" y="21" fill="%230073B5"/></svg>') 16 16, auto !important;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="32" height="11" y="0" fill="%23005aa7"/><rect width="32" height="10" y="11" fill="%23ffffff"/><rect width="32" height="11" y="21" fill="%23005aa7"/><!-- estilizado: sol y tres volcanes en la franja blanca --><path d="M10 15 a6 6 0 0 1 12 0" fill="%23ffd54a"/><polygon points="11,19 16,13 21,19" fill="%232e7d32"/><polygon points="8,20 13,16 18,20" fill="%232e7d32" opacity="0.9"/><polygon points="14,20 17,16 20,20" fill="%232e7d32" opacity="0.9"/></svg>') 16 16, auto !important;
 }
