@@ -28,10 +28,27 @@
 
     sections.forEach(s => io.observe(s));
 
-    // realzar al hacer clic
-    [...tocLinks, ...tabLinks].forEach(a=>{
-        a.addEventListener('click', ()=>updateActive(a.getAttribute('href')));
-    });
+    // realzar al hacer clic: smooth scroll y marcar activo
+    const handleClick = (a) => {
+        a.addEventListener('click', (ev) => {
+            const href = a.getAttribute('href');
+            if(href && href.startsWith('#')){
+                ev.preventDefault();
+                const target = document.querySelector(href);
+                if(target){
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // marcar inmediatamente (el observer actualizará si cambia)
+                    updateActive(href);
+                    // update URL without page jump
+                    history.replaceState(null, '', href);
+                }
+            } else {
+                // enlaces externos (otras páginas) mantienen navegación normal
+            }
+        });
+    };
+
+    [...tocLinks, ...tabLinks].forEach(a=> handleClick(a));
 })();
 
 // Control menú hamburguesa: toggle, cierre al clic fuera y escape

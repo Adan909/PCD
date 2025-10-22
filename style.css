@@ -218,13 +218,40 @@ body.gastronomia-page .block{
 }
 
 /* Galería: marco oscuro para resaltar fotografías */
+.grid-gallery{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    align-items:stretch;
+}
 .grid-gallery .photo{
     background: linear-gradient(135deg,#071217,#0b1316);
     color: var(--g-text);
-    border-radius:8px; overflow:hidden;
+    border-radius:8px; overflow:hidden; display:block; min-height:120px;
 }
-.grid-gallery .photo img{ transition: transform .6s cubic-bezier(.22,.9,.3,1), filter .6s ease }
-.grid-gallery .photo:hover img{ transform: scale(1.06); filter: saturate(1.03) contrast(1.02) }
+.grid-gallery .photo img{
+    display:block; width:100%; height:100%; max-height:240px; object-fit:cover; aspect-ratio:4/3;
+    transition: transform .45s cubic-bezier(.22,.9,.3,1), filter .45s ease, opacity .45s ease;
+    transform-origin:center center; will-change: transform, opacity;
+    opacity:0; transform: translateY(8px) scale(.995);
+}
+.grid-gallery .photo.is-revealed img,
+.grid-gallery .photo img.is-revealed,
+.grid-gallery .photo img[loading="lazy"]{
+    opacity:1; transform:none;
+}
+.grid-gallery .photo:hover img{ transform: scale(1.06); filter: saturate(1.04) contrast(1.03) }
+
+/* Make images slightly smaller on mobile for comfortable layout */
+@media (max-width: 740px){
+    .grid-gallery{ grid-template-columns: repeat(2, 1fr); }
+    .grid-gallery .photo img{ max-height:180px }
+}
+
+@media (max-width: 420px){
+    .grid-gallery{ grid-template-columns: 1fr; }
+    .grid-gallery .photo img{ max-height:160px }
+}
 
 /* Menús y dropdowns: fondo oscuro coherente */
 body.gastronomia-page .menu-dropdown{
