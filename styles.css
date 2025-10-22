@@ -41,3 +41,32 @@ h1{margin:0 0 0.5rem;font-size:2rem}
   .nav-list{flex-wrap:wrap}
   h1{font-size:1.5rem}
 }
+
+/* Hamburger menu (light theme) */
+.hamburger-menu{ position:fixed; top:14px; right:14px; z-index:120; display:flex; align-items:center; gap:8px }
+.hamburger{ display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; border:1px solid rgba(0,0,0,0.06); background:rgba(255,255,255,0.9); cursor:pointer; padding:6px; color:var(--accent-2) }
+.hamburger-box{ display:inline-block; width:22px; height:18px; position:relative }
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{ display:block; position:absolute; left:0; right:0; height:2px; background:var(--accent-2); border-radius:2px; transition: transform .24s cubic-bezier(.2,.85,.32,1), opacity .18s ease, top .18s ease }
+.hamburger-inner{ top:50%; transform:translateY(-50%) }
+.hamburger-inner::before{ content:""; top:-6px }
+.hamburger-inner::after{ content:""; top:6px }
+.hamburger.open .hamburger-inner{ background:transparent }
+.hamburger.open .hamburger-inner::before{ top:0; transform: rotate(45deg) }
+.hamburger.open .hamburger-inner::after{ top:0; transform: rotate(-45deg) }
+
+.menu-dropdown{ position:absolute; top:54px; right:0; min-width:180px; border-radius:10px; padding:8px; background:#fff; border:1px solid rgba(16,32,40,0.06); box-shadow:0 6px 20px rgba(16,32,40,0.08); display:flex; flex-direction:column; gap:6px; opacity:0; transform:translateY(-6px); pointer-events:none }
+.menu-dropdown .menu-item{ color:var(--accent-2); padding:.5rem .7rem; border-radius:8px; text-decoration:none }
+.menu-dropdown .menu-item:hover{ background:linear-gradient(180deg, rgba(11,74,111,0.06), rgba(11,74,111,0.03)); color:var(--accent) }
+
+body.menu-open .menu-dropdown{ opacity:1; transform:translateY(0); pointer-events:auto }
+
+/* hide desktop nav on small screens */
+@media (max-width:900px){
+  .desktop-nav{ display:none }
+  .hamburger-menu{ display:flex }
+}
+
+@media (min-width:901px){
+  /* keep hamburger available but less intrusive on wide screens */
+  .hamburger-menu{ display:flex }
+}
