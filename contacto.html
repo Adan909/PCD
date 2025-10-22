@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto / Mapa — Guía de Managua</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+e2Yk9H6kIYk0w1qfK2s8bV1o7WvQmE2f5p3U9oM4=" crossorigin="" />
+  <style>
+    /* pequeñas reglas locales para la página de contacto */
+    .contact-grid{ display:grid; grid-template-columns: 1fr 480px; gap:20px; align-items:start }
+    .contact-card{ background:var(--card); padding:16px; border-radius:12px }
+    #map{ width:100%; height:420px; border-radius:12px; border:1px solid rgba(16,32,40,0.06) }
+    @media (max-width:920px){ .contact-grid{ grid-template-columns: 1fr; } #map{ height:360px } }
+    .contact-list{ list-style:none; padding:0; margin:0 }
+    .contact-list li{ padding:8px 0; border-bottom:1px dashed rgba(16,32,40,0.04) }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Guía Managua</a>
+      <nav aria-label="Navegación principal" class="desktop-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="lugares.html">Lugares turísticos</a></li>
+          <li><a href="gastronomia.html">Gastronomía</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto / Mapa</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <div class="hamburger-menu" id="hamburgerMenu" aria-hidden="false">
+        <button id="hamburgerBtn" aria-expanded="false" aria-controls="menuDropdown" class="hamburger" title="Menú">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+        <div id="menuDropdown" class="menu-dropdown" hidden role="menu" aria-label="Menú principal">
+          <a href="index.html" class="menu-item" role="menuitem">Inicio</a>
+          <a href="historia.html" class="menu-item" role="menuitem">Historia</a>
+          <a href="lugares.html" class="menu-item" role="menuitem">Lugares turísticos</a>
+          <a href="gastronomia.html" class="menu-item" role="menuitem">Gastronomía</a>
+          <a href="contacto.html" class="menu-item" role="menuitem">Contacto / Mapa</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contacto / Mapa</h1>
+    <p class="lead">Contacto para consultas sobre la guía turística y mapa con la ubicación de los lugares mencionados.</p>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-card">
+          <h2>Contacto</h2>
+          <p>Para consultas, reservas o información adicional, usa los datos a continuación:</p>
+          <ul class="contact-list">
+            <li><strong>Teléfono (Oficina):</strong> +505 2222 5555</li>
+            <li><strong>Teléfono (Móvil):</strong> +505 8888 1234</li>
+            <li><strong>Email (General):</strong> info@guiamanagua.example</li>
+            <li><strong>Email (Reservas):</strong> reservas@guiamanagua.example</li>
+            <li><strong>WhatsApp:</strong> +505 8888 1234</li>
+          </ul>
+        </div>
+
+        <div style="height:18px"></div>
+
+        <div class="contact-card">
+          <h2>Horario de atención</h2>
+          <p>Lunes a viernes: 08:00 — 18:00</p>
+          <p>Sábados: 09:00 — 14:00</p>
+          <p>Domingos: Cerrado</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="contact-card">
+          <h2>Mapa de lugares</h2>
+          <div id="map" aria-hidden="false"></div>
+          <p style="font-size:.9rem;color:var(--muted);margin-top:8px">Marcadores: Catedral Metropolitana, Monumento Rubén Darío, Paseo Xolotlán, Laguna de Tiscapa, Ruinas de la Antigua Catedral, Parque Luis Alfonso Velásquez.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Guía Digital de Managua</p>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+  <script src="contacto.js"></script>
+</body>
+</html>

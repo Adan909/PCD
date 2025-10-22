@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e6f7ff"/>
+      <stop offset="100%" stop-color="#f6fff2"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g)"/>
+  <!-- Simple stylized map: coastline and lake shapes -->
+  <g transform="translate(80,40) scale(0.85)">
+    <path d="M40 60 C 120 10, 260 0, 380 40 C 500 80, 640 60, 740 20 C 820 -10, 920 10, 1000 60 L 1000 500 C 860 520, 720 520, 600 480 C 480 440, 360 420, 240 460 C 120 500, 40 480, 40 360 Z" fill="#d6efd6" stroke="#9fcf9f" stroke-width="4" opacity="0.95"/>
+    <!-- Lago Xolotlán simple -->
+    <ellipse cx="520" cy="220" rx="110" ry="70" fill="#d6f0ff" stroke="#8fc6dd" stroke-width="3"/>
+    <!-- Landmarks dots -->
+    <circle cx="560" cy="200" r="6" fill="#ff6b6b"/>
+    <circle cx="480" cy="240" r="6" fill="#ff6b6b"/>
+    <circle cx="640" cy="230" r="6" fill="#ff6b6b"/>
+    <circle cx="560" cy="300" r="6" fill="#ff6b6b"/>
+    <circle cx="430" cy="310" r="6" fill="#ff6b6b"/>
+    <!-- Labels -->
+    <text x="520" y="120" font-family="Segoe UI, Arial" font-size="34" fill="#064a4a" font-weight="700">Nicaragua</text>
+    <text x="560" y="195" font-family="Segoe UI, Arial" font-size="12" fill="#073642">Catedral</text>
+    <text x="480" y="235" font-family="Segoe UI, Arial" font-size="12" fill="#073642">Monumento</text>
+    <text x="640" y="225" font-family="Segoe UI, Arial" font-size="12" fill="#073642">Paseo</text>
+    <text x="560" y="295" font-family="Segoe UI, Arial" font-size="12" fill="#073642">Tiscapa</text>
+    <text x="430" y="305" font-family="Segoe UI, Arial" font-size="12" fill="#073642">Parque</text>
+  </g>
+  <rect x="20" y="740" width="1160" height="36" rx="6" fill="#ffffff" opacity="0.6"/>
+  <text x="36" y="765" font-family="Segoe UI, Arial" font-size="14" fill="#094">Mapa ilustrativo de Nicaragua — ubicaciones aproximadas</text>
+</svg>
