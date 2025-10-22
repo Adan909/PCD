@@ -16,12 +16,16 @@ El objetivo es crear un sitio web estático que presente la información más re
 
 ---
 ## 👥 Integrantes y Roles
-
-*Diego Roberto Corrales Espinoza
-*Jhesly Lisseth castillo Martinez
-*Dannia María Pérez Rivera 
-*Victor Mateo Alcócer López
-*Jorge Adán Ortega Torres
+* **Diego Roberto Corrales Espinoza** 
+    * **Rol:** [Encargado de la sección del Inicio y Navegación]
+* **Jhesly Lisseth castillo Martinez** 
+    * **Rol:** [Encargado de la sección de Contacto/Mapa]
+* *Dannia María Pérez Rivera** 
+    * **Rol:** [Encargado de la sección de Lugares turisticos]
+* **Victor Mateo Alcócer López** 
+    * **Rol:** [Encargado de la sección de Gatronomía]
+* **Jorge Adán Ortega Torres** 
+    * **Rol:** [Encargado de la sección de Historia]
 
 ---
 
