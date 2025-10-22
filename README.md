@@ -28,6 +28,9 @@ El objetivo es crear un sitio web estático que presente la información más re
     * **Rol:** [Encargado de la sección de Historia]
 
 ---
+## 🤖 Uso de GitHub Copilot
+
+Para este proyecto, se utilizó GitHub Copilot como asistente de programación. Sus principales usos fueron:
 
 ![Utilización del Copilot](Documentacion/img1.png)
 ![Utilización del Copilot](Documentacion/img2.png)
