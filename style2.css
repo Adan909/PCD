@@ -1,0 +1,373 @@
+:root{
+    --bg:#0b0f1a;
+    --bg-2:#0d1220;
+    --surface:#111827;
+    --surface-2:#0f172a;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --accent:#3b82f6;
+    --accent-2:#2563eb;
+    --accent-soft: rgba(59,130,246,.12);
+    --ring: rgba(59,130,246,.45);
+    --ok:#2228c5;
+    --warn:#f59e0b;
+    --danger:#ef4444;
+    color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+    background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,.12), transparent 60%),
+        radial-gradient(1200px 600px at 110% 10%, rgba(37,99,235,.10), transparent 60%),
+        linear-gradient(#0a0f19, #0b0f1a 20%, #0b0f1a 80%, #0a0f19);
+    color:var(--text);
+    line-height:1.65;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{color:#60a5fa; text-decoration:underline}
+.container{width:min(1100px, 92%); margin:0 auto}
+
+/* Header / Hero */
+header.hero{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(180deg, rgba(37,99,235,.25), rgba(37,99,235,0) 60%), linear-gradient(180deg, rgba(17,24,39,.9), rgba(17,24,39,.6));
+    border-bottom:1px solid rgba(59,130,246,.25);
+}
+.hero .wrap{
+    padding:64px 0 28px;
+}
+.badge{
+    display:inline-flex; gap:.5rem; align-items:center;
+    border:1px solid var(--ring);
+    color:#c7d2fe; background:rgba(37,99,235,.08);
+    padding:.35rem .65rem; border-radius:999px; font-size:.78rem; letter-spacing:.2px
+}
+h1.title{
+    margin:14px 0 8px; font-size: clamp(32px, 6vw, 56px);
+    line-height:1.05; font-weight:800;
+    background:linear-gradient(180deg, #e8efff, #93c5fd 70%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 0 24px rgba(59,130,246,.25);
+}
+p.subtitle{
+    max-width:60ch; color:var(--muted); font-size:1.05rem; margin:0 0 18px
+}
+.hero-cards{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:26px 0 8px
+}
+.mini{
+    background:linear-gradient(180deg, rgba(17,24,39,.7), rgba(15,23,42,.7));
+    border:1px solid rgba(59,130,246,.18);
+    border-radius:12px; padding:14px;
+}
+.mini strong{display:block; color:#cfe1ff; font-weight:600}
+.mini span{color:var(--muted); font-size:.92rem}
+
+/* Sticky nav */
+.topnav{
+    position:sticky; top:0; z-index:30; backdrop-filter: blur(8px);
+    background:linear-gradient(180deg, rgba(10,15,25,.85), rgba(10,15,25,.6));
+    border-bottom:1px solid rgba(59,130,246,.18);
+}
+.tabs{
+    display:flex; gap:10px; overflow:auto; padding:10px 0;
+    scrollbar-width:none
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+    white-space:nowrap; padding:.5rem .8rem; border-radius:999px;
+    border:1px solid rgba(59,130,246,.22); background:rgba(59,130,246,.06);
+    color:#cfe1ff; font-size:.9rem
+}
+.tab.active{background:var(--accent-soft); border-color:var(--ring); box-shadow:0 0 0 3px rgba(59,130,246,.12) inset}
+
+/* Layout */
+main{padding:30px 0 64px}
+.grid{
+    display:grid; grid-template-columns: 260px 1fr; gap:26px
+}
+@media (max-width: 980px){ .grid{ grid-template-columns:1fr } .toc{ position:static } }
+.toc{
+    position:sticky; top:64px; align-self:start; max-height: calc(100vh - 90px); overflow:auto;
+    padding:14px; border:1px solid rgba(59,130,246,.18); border-radius:14px;
+    background:linear-gradient(180deg, rgba(17,24,39,.75), rgba(15,23,42,.75));
+}
+.toc h3{margin:.25rem 0 .5rem; font-size:1rem; color:#cfe1ff}
+.toc a{display:block; color:var(--muted); padding:.35rem .4rem; border-radius:8px}
+.toc a:hover{background:rgba(59,130,246,.08); color:#e2e8f0}
+.toc a.active{color:#e5edff; background:var(--accent-soft); border-left:3px solid var(--accent); padding-left:.65rem}
+
+article{
+    display:grid; gap:22px
+}
+section.block{
+    padding:22px 18px 18px;
+    border:1px solid rgba(59,130,246,.18);
+    border-radius:16px;
+    background:
+        linear-gradient(180deg, rgba(17,24,39,.78), rgba(15,23,42,.78)),
+        radial-gradient(600px 160px at 20% -10%, rgba(59,130,246,.10), transparent 60%);
+}
+section.block h2{
+    margin:0 0 8px;
+    font-size: clamp(22px, 3.5vw, 28px); line-height:1.25; font-weight:800;
+    color:#dbeafe
+}
+.eyebrow{
+    display:inline-flex; align-items:center; gap:.5rem;
+    color:#a5b4fc; font-size:.85rem; margin-bottom:.25rem
+}
+.lead{color:#cbd5e1}
+p{margin:.5rem 0; color:#d6d9df}
+.callout{
+    margin-top:12px; padding:12px 14px; border-left:3px solid var(--accent);
+    background:rgba(59,130,246,.06); border-radius:10px
+}
+ul{margin:.4rem 0 .6rem 1.2rem}
+li{margin:.25rem 0}
+.chip{
+    display:inline-block; padding:.25rem .55rem; border-radius:999px;
+    border:1px solid rgba(59,130,246,.25); background:rgba(59,130,246,.08);
+    color:#cfe1ff; font-size:.8rem; margin-right:.35rem
+}
+/* Timeline */
+.timeline{
+    position:relative; margin:8px 0 0; padding-left:18px
+}
+.timeline::before{
+    content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background:linear-gradient(#1f2a44, #3b82f6 40%, #1f2a44)
+}
+.tl-item{
+    position:relative; margin:12px 0; padding-left:18px
+}
+.tl-item::before{
+    content:""; position:absolute; left:2px; top:.45rem; width:16px; height:16px; border-radius:50%;
+    background:radial-gradient(circle at 45% 45%, #93c5fd, #3b82f6 60%); box-shadow:0 0 0 3px rgba(59,130,246,.15)
+}
+.tl-item strong{color:#dbeafe}
+.tl-item p{margin:.15rem 0 0; color:#cbd5e1; font-size:.95rem}
+
+footer{
+    margin:32px 0 0; padding:20px 0 34px; border-top:1px solid rgba(59,130,246,.18);
+    background:linear-gradient(180deg, rgba(10,15,25,.0), rgba(10,15,25,.6))
+}
+.to-top{
+    position:fixed; right:16px; bottom:16px; z-index:40;
+    padding:.6rem .8rem; border-radius:12px; border:1px solid rgba(59,130,246,.25);
+    background:rgba(15,23,42,.8); color:#cfe1ff;
+    box-shadow:0 8px 28px rgba(0,0,0,.35)
+}
+.to-top:hover{background:rgba(30,41,59,.9)}
+
+/* ---------- Estilos exclusivos para la página de Gastronomía: paleta oscura y profesional ---------- */
+/* Objetivo: apariencia exclusiva, oscura y sofisticada para la sección de gastronomía. */
+body.gastronomia-page{
+    /* Base oscuro / profesional */
+    --g-bg: #071018;          /* fondo principal, casi negro con matiz azulado */
+    --g-surface: #0b1620;     /* superficies: paneles profundos */
+    --g-surface-2: #0f1e26;   /* superficies secundarias */
+    --g-text: #E8F3F0;        /* texto claro, ligeramente verdoso para calidez */
+    --g-muted: #8A9A97;       /* texto secundario */
+    /* Acentos: cobre/ámbar y teal profundo para balance elegante */
+    --g-accent: #B86B2E;      /* acento principal: cobre suave */
+    --g-accent-2: #19857A;    /* acento secundario: teal profundo */
+    --g-accent-soft: rgba(184,107,46,0.06);
+    --g-ring: rgba(25,133,122,0.12);
+    --g-border: rgba(25,133,122,0.06);
+    --g-cta-text: #0b0b0b;
+    color: var(--g-text);
+    background: linear-gradient(180deg, var(--g-bg) 0%, #071018 64%);
+}
+
+/* Header / hero: halos sutiles usando los acentos */
+body.gastronomia-page header.hero,
+body.gastronomia-page .gastronomy-hero{
+    background:
+        radial-gradient(600px 240px at 10% 8%, rgba(25,133,122,0.04), transparent 28%),
+        radial-gradient(420px 160px at 88% 26%, rgba(184,107,46,0.03), transparent 34%),
+        linear-gradient(180deg, rgba(6,16,24,0.98), rgba(7,16,22,0.985));
+    border-bottom: 1px solid rgba(15,26,28,0.12);
+}
+
+/* Badges / chips */
+body.gastronomia-page .badge,
+body.gastronomia-page .chip{
+    background: linear-gradient(180deg, rgba(25,133,122,0.03), rgba(184,107,46,0.02));
+    color: var(--g-accent-2);
+    border-color: rgba(25,133,122,0.06);
+}
+
+/* Tarjetas y bloques */
+body.gastronomia-page .gastronomy-main .card,
+body.gastronomia-page .block{
+    background: linear-gradient(180deg, var(--g-surface), var(--g-surface-2));
+    border: 1px solid rgba(15,26,28,0.06);
+    color: var(--g-text);
+    border-radius: 12px;
+}
+
+/* CTA: acento cobre con texto oscuro para contraste fuerte */
+.gastronomy-main .card .cta{
+    background: linear-gradient(180deg, var(--g-accent), #8B4E28);
+    color: var(--g-cta-text);
+}
+
+/* Galería: marco oscuro para resaltar fotografías */
+.grid-gallery{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    align-items:stretch;
+}
+.grid-gallery .photo{
+    background: linear-gradient(135deg,#071217,#0b1316);
+    color: var(--g-text);
+    border-radius:8px; overflow:hidden; display:block; min-height:120px;
+}
+.grid-gallery .photo img{
+    display:block; width:100%; height:100%; max-height:240px; object-fit:cover; aspect-ratio:4/3;
+    transition: transform .45s cubic-bezier(.22,.9,.3,1), filter .45s ease, opacity .45s ease;
+    transform-origin:center center; will-change: transform, opacity;
+    opacity:0; transform: translateY(8px) scale(.995);
+}
+.grid-gallery .photo.is-revealed img,
+.grid-gallery .photo img.is-revealed,
+.grid-gallery .photo img[loading="lazy"]{
+    opacity:1; transform:none;
+}
+.grid-gallery .photo:hover img{ transform: scale(1.06); filter: saturate(1.04) contrast(1.03) }
+
+/* Make images slightly smaller on mobile for comfortable layout */
+@media (max-width: 740px){
+    .grid-gallery{ grid-template-columns: repeat(2, 1fr); }
+    .grid-gallery .photo img{ max-height:180px }
+}
+
+@media (max-width: 420px){
+    .grid-gallery{ grid-template-columns: 1fr; }
+    .grid-gallery .photo img{ max-height:160px }
+}
+
+/* Menús y dropdowns: fondo oscuro coherente */
+body.gastronomia-page .menu-dropdown{
+    background: linear-gradient(180deg,#0b1414,#071018);
+    border-color: var(--g-border);
+    color: var(--g-text);
+}
+body.gastronomia-page .menu-item{ color: var(--g-text) }
+body.gastronomia-page .menu-item:hover{ background: var(--g-accent-soft); color: var(--g-accent-2) }
+
+/* Tipografía y textos secundarios */
+body.gastronomia-page ul, body.gastronomia-page ol{ color: #9FB0AB }
+.muted{ color: var(--g-muted) }
+
+/* Timeline: marcadores con acento secundario */
+html body.gastronomia-page .timeline::before{
+    background: linear-gradient(#071217, var(--g-accent-2) 30%, #071217);
+}
+html body.gastronomia-page .tl-item::before{
+    background: radial-gradient(circle at 45% 45%, rgba(25,133,122,0.06), var(--g-accent-2) 60%);
+    box-shadow: 0 0 0 3px rgba(25,133,122,0.06), 0 8px 20px rgba(15,26,28,0.04);
+}
+
+/* Microinteracciones sutiles para entorno oscuro */
+body.gastronomia-page .badge:hover{ transform: translateY(-2px); box-shadow: 0 10px 30px rgba(25,133,122,0.04) }
+.gastronomy-main .card:hover{ transform: translateY(-6px); box-shadow: 0 20px 40px rgba(15,26,28,0.06) }
+
+/* Formularios */
+body.gastronomia-page input,
+body.gastronomia-page select,
+body.gastronomia-page textarea{
+    background: var(--g-surface-2); color: var(--g-text);
+    border: 1px solid rgba(15,26,28,0.06); border-radius:8px; padding:.5rem .6rem;
+}
+
+/* Titles */
+body.gastronomia-page .title{ color: var(--g-accent-2); font-weight:800 }
+body.gastronomia-page .subtitle{ color: var(--g-muted) }
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important }
+}
+
+/* Fin: paleta oscura y exclusiva para Gastronomía */
+
+/* ---------- Animaciones y utilidades ---------- */
+/* Reveal on scroll (general) */
+.reveal-on-scroll{ opacity:0; transform: translateY(12px) scale(.995); transition: opacity .62s cubic-bezier(.2,.9,.2,1), transform .62s cubic-bezier(.2,.9,.2,1); will-change: transform, opacity }
+.reveal-on-scroll.is-revealed{ opacity:1; transform:none }
+
+/* Fade-left for timeline etc. */
+.fade-left{ opacity:0; transform: translateX(-12px); transition: opacity .56s ease, transform .56s ease }
+.fade-left.is-revealed{ opacity:1; transform:none }
+
+/* Small pop animation utility */
+@keyframes pop-up{ from{ transform: translateY(8px) scale(.995); opacity:0 } to{ transform:none; opacity:1 } }
+.pop-up{ animation: pop-up .52s cubic-bezier(.2,.9,.2,1) both }
+
+/* Menu dropdown smoothing (override to ensure smooth appearance in dark theme) */
+.menu-dropdown{ transition: opacity .22s cubic-bezier(.2,.9,.2,1), transform .28s cubic-bezier(.22,.9,.3,1) }
+
+/* Utility delays for staggered entrances */
+.delay-1{ transition-delay:.06s }
+.delay-2{ transition-delay:.12s }
+.delay-3{ transition-delay:.18s }
+
+/* End animations */
+
+/* General hamburger menu styles (visible on all pages) */
+.hamburger-menu{
+    position:fixed; top:18px; right:18px; z-index:120; display:flex; align-items:center; gap:8px;
+}
+.hamburger{
+    display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px;
+    border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02);
+    cursor:pointer; padding:6px; color:var(--text);
+}
+.hamburger-box{ display:inline-block; width:22px; height:18px; position:relative }
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after{
+    display:block; position:absolute; left:0; right:0; height:2px; background:var(--text); border-radius:2px; transition: transform .24s cubic-bezier(.2,.85,.32,1), opacity .18s ease, top .18s ease;
+}
+.hamburger-inner{ top:50%; transform:translateY(-50%); }
+.hamburger-inner::before{ content:""; top:-6px }
+.hamburger-inner::after{ content:""; top:6px }
+
+/* open state: morph into X */
+.hamburger.open .hamburger-inner{ background:transparent }
+.hamburger.open .hamburger-inner::before{ top:0; transform: rotate(45deg) }
+.hamburger.open .hamburger-inner::after{ top:0; transform: rotate(-45deg) }
+
+.menu-dropdown{
+    position:absolute; top:54px; right:0; min-width:170px; border-radius:12px; padding:8px;
+    background:linear-gradient(180deg, rgba(17,24,39,0.95), rgba(15,23,42,0.95));
+    border:1px solid rgba(59,130,246,0.09); box-shadow:0 10px 30px rgba(2,6,23,0.6);
+    display:flex; flex-direction:column; gap:6px; opacity:0; transform:translateY(-6px); pointer-events:none;
+}
+.menu-dropdown .menu-item{ color:var(--text); padding:.5rem .7rem; border-radius:8px }
+.menu-dropdown .menu-item:hover{ background:rgba(59,130,246,0.06) }
+
+/* when body has .menu-open, show dropdown */
+body.menu-open .menu-dropdown{ opacity:1; transform:translateY(0); pointer-events:auto }
+
+@media (min-width: 980px){
+    /* on wide screens keep hamburger visible but smaller */
+    .hamburger{ width:40px; height:40px }
+}
+
+/* Icon: Gallo Pinto (típica comida nicaragüense) — icono SVG usado como background */
+.nica-food-icon{
+    width:32px; height:32px; display:inline-block;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%23071218"/><ellipse cx="16" cy="20.2" rx="11" ry="5.6" fill="%238c5a2f" opacity="0.16"/><ellipse cx="16" cy="18.3" rx="9.2" ry="4.1" fill="%23ffffff"/><!-- granos de frijol --> <circle cx="12.6" cy="17.3" r="1" fill="%23703f2f"/><circle cx="15.4" cy="16.2" r="1" fill="%23703f2f"/><circle cx="18.2" cy="17.6" r="1" fill="%23703f2f"/><circle cx="14.2" cy="18.6" r="0.9" fill="%23703f2f"/><circle cx="17.6" cy="15.6" r="0.9" fill="%23703f2f"/><!-- hoja de culantro --> <path d="M21 13.2c0.9-0.5 2.1-0.85 2.6-1 0 0 0.16 0.95-0.78 1.7-0.94 0.75-1.9 0.2-1.82-0.7z" fill="%2398cbb1"/><!-- tajada de plátano --> <path d="M9 20.2c1.4-0.95 3.7-1.5 6.8-1.5 3.1 0 5.4 0.55 6.8 1.5-0.2 0.45-2.1 1.8-6.8 1.8s-6.6-1.35-6.8-1.8z" fill="%23e6b77a" opacity="0.7"/></svg>');
+    background-repeat:no-repeat; background-position:center; background-size:contain;
+}
+body, * {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="32" height="11" y="0" fill="%23005aa7"/><rect width="32" height="10" y="11" fill="%23ffffff"/><rect width="32" height="11" y="21" fill="%23005aa7"/><!-- estilizado: sol y tres volcanes en la franja blanca --><path d="M10 15 a6 6 0 0 1 12 0" fill="%23ffd54a"/><polygon points="11,19 16,13 21,19" fill="%232e7d32"/><polygon points="8,20 13,16 18,20" fill="%232e7d32" opacity="0.9"/><polygon points="14,20 17,16 20,20" fill="%232e7d32" opacity="0.9"/></svg>') 16 16, auto !important;
+}
