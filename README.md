@@ -1,11 +1,8 @@
 # 🗺️ Guía Turística Digital de Managua
-
 Este es un proyecto que sirve como guía digital para visitantes y locales de Managua.
 
 ---
-
 ## 🎯 Propósito del Sitio
-
 El objetivo es crear un sitio web estático que presente la información más relevante de la ciudad. El sitio está estructurado en las siguientes secciones:
 
 * **Inicio:** Bienvenida y presentación general.
@@ -29,10 +26,14 @@ El objetivo es crear un sitio web estático que presente la información más re
 
 ---
 ## 🤖 Uso de GitHub Copilot
-
 Para este proyecto, se utilizó GitHub Copilot como asistente de programación. Sus principales usos fueron:
 
 ![Utilización del Copilot](Documentacion/img1.png)
 ![Utilización del Copilot](Documentacion/img2.png)
 ![Utilización del Copilot](Documentacion/img3.png)
 ![Utilización del Copilot](Documentacion/img4.png)
+
+---
+## 🚀 Sitio Web (Deploy)
+Puedes visitar el sitio en vivo en el siguiente enlace:
+****
