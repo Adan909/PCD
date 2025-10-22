@@ -15,3 +15,13 @@ El objetivo es crear un sitio web estático que presente la información más re
 * **Contacto / Mapa:** Un formulario de contacto y/o mapa con ubicaciones.
 
 ---
+## 👥 Integrantes y Roles
+
+*Diego Roberto Corrales Espinoza
+*Jhesly Lisseth castillo Martinez
+*Dannia María Pérez Rivera 
+*Victor Mateo Alcócer López
+*Jorge Adán Ortega Torres
+
+---
+
