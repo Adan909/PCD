@@ -9,3 +9,10 @@ Difundir y preservar la historia de Nicaragua mediante un recurso web claro, acc
 - Ayudó a crear pruebas básicas y scripts de build/lint.
 - Propuso metadatos y marcado para SEO y previsualizaciones sociales.
 - Aceleró documentación y comentarios del código para mantenimiento.
+
+## roles
+Adan: Programador, lider
+Jhesly_Castillo: Diseño, programadora
+Diego roberto: Programador
+Victor Alcocer: programador, tester
+Dannia: diseño, tester
