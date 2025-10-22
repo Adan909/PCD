@@ -1,4 +1,5 @@
 :root{
+            --ease-fast: cubic-bezier(.2,.8,.2,1);
             --bg:#f7f7f8; --card:#ffffff; --accent:#0066cc; --muted:#666;
             --maxw:1100px;
             --muted: #000080; /* var(--muted) también pasa a azul marino */
@@ -48,7 +49,119 @@
             .card img{height:140px}
             .lightbox img{height:260px}
         }
+        /* Transiciones y animaciones generales */
+
+
+/* Suavizar imágenes de las tarjetas */
+.img-btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform .28s var(--ease-fast), filter .28s var(--ease-fast), box-shadow .28s var(--ease-fast);
+    border-radius: 6px;
+}
+
+/* Hover/Focus en la imagen: ligero zoom y sombreado */
+.img-btn:hover img,
+.img-btn:focus img {
+    transform: scale(1.04);
+    filter: brightness(.96);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+}
+
+/* Transición de la tarjeta (elevación) */
+.card {
+    transition: transform .28s var(--ease-fast), box-shadow .28s var(--ease-fast);
+    will-change: transform;
+}
+.card:hover,
+.card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.08);
+}
+
+/* Lightbox: fondo y panel con transición */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s var(--ease-fast);
+    z-index: 1000;
+}
+
+/* Estado visible */
+.lightbox.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Panel interior con animación de aparición (suave desplazamiento + escala) */
+.lightbox .panel {
+    background: #fff;
+    max-width: 920px;
+    width: calc(100% - 40px);
+    margin: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    transform: translateY(10px) scale(.98);
+    opacity: 0;
+    transition: transform .26s var(--ease-fast), opacity .26s var(--ease-fast);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+}
+
+/* Panel visible (cuando el padre tiene .show) */
+.lightbox.show .panel {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* Imagen interna con transición */
+#lbImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity .22s var(--ease-fast), transform .22s var(--ease-fast);
+}
+
+/* Botón cerrar con feedback */
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: transform .16s var(--ease-fast), color .16s var(--ease-fast);
+}
+.close-btn:hover,
+.close-btn:focus {
+    transform: scale(1.06);
+    color: #333;
+}
+
+/* Pequeños refinamientos para textos */
+.meta h3,
+.meta p {
+    transition: color .2s var(--ease-fast), transform .22s var(--ease-fast);
+    margin: 0;
+}
+
+/* Mejora accesibilidad: animación reducida si el usuario prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .img-btn img,
+    .card,
+    .lightbox,
+    .lightbox .panel,
+    #lbImage {
+        transition: none !important;
+        transform: none !important;
+    }
 
         nav a, nav a:visited, nav a.active {
             color: #333 !important;
         }
+    }
