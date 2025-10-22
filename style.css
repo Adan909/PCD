@@ -164,80 +164,112 @@ footer{
 }
 .to-top:hover{background:rgba(30,41,59,.9)}
 
-/* ---------- Estilos exclusivos para la página de Gastronomía ---------- */
+/* ---------- Estilos exclusivos para la página de Gastronomía: paleta oscura y profesional ---------- */
+/* Objetivo: apariencia exclusiva, oscura y sofisticada para la sección de gastronomía. */
 body.gastronomia-page{
-    --g-bg: #fff8f2;
-    --g-surface: #ffffff;
-    --g-text: #1f2937;
-    --g-muted: #6b7280;
-    --g-accent: #d97706;
-    --g-accent-2: #b45309;
-    background: linear-gradient(180deg, var(--g-bg) 0%, #fffaf7 60%);
+    /* Base oscuro / profesional */
+    --g-bg: #071018;          /* fondo principal, casi negro con matiz azulado */
+    --g-surface: #0b1620;     /* superficies: paneles profundos */
+    --g-surface-2: #0f1e26;   /* superficies secundarias */
+    --g-text: #E8F3F0;        /* texto claro, ligeramente verdoso para calidez */
+    --g-muted: #8A9A97;       /* texto secundario */
+    /* Acentos: cobre/ámbar y teal profundo para balance elegante */
+    --g-accent: #B86B2E;      /* acento principal: cobre suave */
+    --g-accent-2: #19857A;    /* acento secundario: teal profundo */
+    --g-accent-soft: rgba(184,107,46,0.06);
+    --g-ring: rgba(25,133,122,0.12);
+    --g-border: rgba(25,133,122,0.06);
+    --g-cta-text: #0b0b0b;
+    color: var(--g-text);
+    background: linear-gradient(180deg, var(--g-bg) 0%, #071018 64%);
+}
+
+/* Header / hero: halos sutiles usando los acentos */
+body.gastronomia-page header.hero,
+body.gastronomia-page .gastronomy-hero{
+    background:
+        radial-gradient(600px 240px at 10% 8%, rgba(25,133,122,0.04), transparent 28%),
+        radial-gradient(420px 160px at 88% 26%, rgba(184,107,46,0.03), transparent 34%),
+        linear-gradient(180deg, rgba(6,16,24,0.98), rgba(7,16,22,0.985));
+    border-bottom: 1px solid rgba(15,26,28,0.12);
+}
+
+/* Badges / chips */
+body.gastronomia-page .badge,
+body.gastronomia-page .chip{
+    background: linear-gradient(180deg, rgba(25,133,122,0.03), rgba(184,107,46,0.02));
+    color: var(--g-accent-2);
+    border-color: rgba(25,133,122,0.06);
+}
+
+/* Tarjetas y bloques */
+body.gastronomia-page .gastronomy-main .card,
+body.gastronomia-page .block{
+    background: linear-gradient(180deg, var(--g-surface), var(--g-surface-2));
+    border: 1px solid rgba(15,26,28,0.06);
+    color: var(--g-text);
+    border-radius: 12px;
+}
+
+/* CTA: acento cobre con texto oscuro para contraste fuerte */
+.gastronomy-main .card .cta{
+    background: linear-gradient(180deg, var(--g-accent), #8B4E28);
+    color: var(--g-cta-text);
+}
+
+/* Galería: marco oscuro para resaltar fotografías */
+.grid-gallery .photo{
+    background: linear-gradient(135deg,#071217,#0b1316);
+    color: var(--g-text);
+    border-radius:8px; overflow:hidden;
+}
+.grid-gallery .photo img{ transition: transform .6s cubic-bezier(.22,.9,.3,1), filter .6s ease }
+.grid-gallery .photo:hover img{ transform: scale(1.06); filter: saturate(1.03) contrast(1.02) }
+
+/* Menús y dropdowns: fondo oscuro coherente */
+body.gastronomia-page .menu-dropdown{
+    background: linear-gradient(180deg,#0b1414,#071018);
+    border-color: var(--g-border);
     color: var(--g-text);
 }
+body.gastronomia-page .menu-item{ color: var(--g-text) }
+body.gastronomia-page .menu-item:hover{ background: var(--g-accent-soft); color: var(--g-accent-2) }
 
-/* Hero specific */
-body.gastronomia-page header.hero{
-    background: linear-gradient(120deg, rgba(217,119,6,0.06), rgba(217,119,6,0.02));
-    border-bottom: 1px solid rgba(180,83,9,0.06);
-}
-body.gastronomia-page .title{
-    color: var(--g-accent-2);
-    background: none;
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-body.gastronomia-page .subtitle{ color:var(--g-muted); }
+/* Tipografía y textos secundarios */
+body.gastronomia-page ul, body.gastronomia-page ol{ color: #9FB0AB }
+.muted{ color: var(--g-muted) }
 
-/* subtle entrance for hero */
-.gastronomy-hero .title{ animation: gastronomy-hero-in 620ms cubic-bezier(.2,.9,.2,1) both }
-@keyframes gastronomy-hero-in{
-    from{ transform: translateY(10px); opacity:0 }
-    to{ transform: none; opacity:1 }
+/* Timeline: marcadores con acento secundario */
+html body.gastronomia-page .timeline::before{
+    background: linear-gradient(#071217, var(--g-accent-2) 30%, #071217);
+}
+html body.gastronomia-page .tl-item::before{
+    background: radial-gradient(circle at 45% 45%, rgba(25,133,122,0.06), var(--g-accent-2) 60%);
+    box-shadow: 0 0 0 3px rgba(25,133,122,0.06), 0 8px 20px rgba(15,26,28,0.04);
 }
 
-/* Main layout tweaks */
-body.gastronomia-page .gastronomy-main{ padding:44px 0 96px }
-body.gastronomia-page .block{
-    background: var(--g-surface);
-    border: 1px solid rgba(15,23,42,0.03);
-    box-shadow: 0 8px 30px rgba(15,23,42,0.03);
-    border-radius: 14px;
+/* Microinteracciones sutiles para entorno oscuro */
+body.gastronomia-page .badge:hover{ transform: translateY(-2px); box-shadow: 0 10px 30px rgba(25,133,122,0.04) }
+.gastronomy-main .card:hover{ transform: translateY(-6px); box-shadow: 0 20px 40px rgba(15,26,28,0.06) }
+
+/* Formularios */
+body.gastronomia-page input,
+body.gastronomia-page select,
+body.gastronomia-page textarea{
+    background: var(--g-surface-2); color: var(--g-text);
+    border: 1px solid rgba(15,26,28,0.06); border-radius:8px; padding:.5rem .6rem;
 }
 
-.gastronomy-main .grid-cards{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:18px; }
-.gastronomy-main .card{ padding:20px; border-radius:12px; background: linear-gradient(180deg,#fff,#fffaf6); transition: transform .18s ease, box-shadow .18s ease; }
-.gastronomy-main .card:hover{ transform: translateY(-6px); box-shadow: 0 22px 48px rgba(180,83,9,0.06); }
+/* Titles */
+body.gastronomia-page .title{ color: var(--g-accent-2); font-weight:800 }
+body.gastronomia-page .subtitle{ color: var(--g-muted) }
 
-/* Gallery */
-.grid-gallery{ display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:12px }
-.grid-gallery .photo{ background: linear-gradient(135deg,#fff2e8,#fff6f1); border-radius:8px; height:120px; display:flex; align-items:center; justify-content:center; color:#7c2d12; font-weight:700 }
-
-.gastronomy-main ol{ margin-left:1.1rem }
-.muted{ color:var(--g-muted) }
-
-/* Menu adjustments to match palette */
-body.gastronomia-page .hamburger{ border-color: rgba(180,83,9,0.12); background: linear-gradient(180deg, rgba(255,250,245,0.9), rgba(255,250,245,0.95)); }
-body.gastronomia-page .menu-dropdown{ border-color: rgba(180,83,9,0.08); background: linear-gradient(180deg,#fff,#fffaf6); color:var(--g-text) }
-body.gastronomia-page .menu-item{ color:var(--g-text); padding:.55rem .75rem; border-radius:8px }
-body.gastronomia-page .menu-item:hover{ background: rgba(217,119,6,0.06); color:var(--g-accent-2) }
-
-/* Smooth dropdown transitions */
-.menu-dropdown{ transition: opacity .16s ease, transform .16s ease }
-
-@media (min-width: 980px){
-    body.gastronomia-page .menu-open .menu-dropdown{ display:flex; opacity:1; transform: translateY(0) }
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important }
 }
 
-@media (max-width: 720px){
-    .gastronomy-main .card{ padding:14px }
-    .grid-gallery .photo{ height:88px }
-}
-
-/* small helper for readable lists */
-body.gastronomia-page ul, body.gastronomia-page ol{ color: #374151 }
-
-/* end gastronomy styles */
+/* Fin: paleta oscura y exclusiva para Gastronomía */
 
 /* General hamburger menu styles (visible on all pages) */
 .hamburger-menu{
