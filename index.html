@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Guía turística digital — Lugares turísticos de Managua</title>
+    <meta name="description" content="Galería de lugares emblemáticos de Managua con descripciones y fotos." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>Guía turística digital — Managua</h1>
+                <div style="color:var(--muted);font-size:0.9rem">Lugares turísticos</div>
+            </div>
+            <nav aria-label="Navegación principal">
+                <!-- Simulación de menú: no enlazado a otras páginas -->
+                <a href="#" aria-current="false">Inicio</a>
+                <a class="active" href="#" aria-current="page">Lugares</a>
+                <a href="#" aria-current="false">Gastronomía</a>
+                <a href="#" aria-current="false">Historia</a>
+                <a href="#" aria-current="false">Contacto</a>
+            </nav>
+        </header>
+
+        <section class="intro" aria-labelledby="intro-title">
+            <h2 id="intro-title" style="margin:0 0 6px">Lugares emblemáticos de Managua</h2>
+            <p style="margin:0;color:var(--muted)">Explora una selección de sitios turísticos importantes en Managua. Haz clic en una foto para ver más detalles.</p>
+        </section>
+
+        <main>
+            <section class="gallery-grid" aria-label="Galería de lugares">
+                <!-- Card 1: Catedral Metropolitana -->
+                <article class="card">
+                    <button class="img-btn" data-title="Catedral Metropolitana" data-img="images/catedral_metropolitana.jpg" data-desc="La Catedral Metropolitana (Catedral de Santiago) es un ícono religioso y arquitectónico de Managua. Reconstruida tras terremotos, su presencia domina la plaza principal.">
+                        <img src="img.jpg/Antigua_catedral_de_Managua.jpg" alt="Catedral Metropolitana de Managua">
+                    </button>
+                    <div class="content">
+                        <h3>Catedral Metropolitana</h3>
+                        <p>Icono religioso con arquitectura característica, situado frente a la plaza central de la ciudad.</p>
+                        <div class="tags"><span class="tag">Historia</span><span class="tag">Arquitectura</span></div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Monumento a Rubén Darío -->
+                <article class="card">
+                    <button class="img-btn" data-title="Monumento a Rubén Darío" data-img="images/monumento_ruben_dario.jpg" data-desc="Monumento dedicado al poeta Rubén Darío, figura central del modernismo literario nicaragüense,</div> ubicado en un punto destacado de la ciudad.">
+                        <img src="img.jpg/monumento_Ruben_Dario.jpg"Monumento a Rubén Darío en Managua">
+                    </button>
+                    <div class="content">
+                        <h3>Monumento a Rubén Darío</h3>
+                        <p>Homenaje al poeta nacional, lugar de visita cultural y fotográfica.</p>
+                        <div class="tags"><span class="tag">Cultura</span><span class="tag">Arte</span></div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Paseo Xolotlán -->
+                <article class="card">
+                    <button class="img-btn" data-title="Paseo Xolotlán" data-img="images/paseo_xolotlan.jpg" data-desc="Malecón y zonas públicas junto a la laguna Xolotlán que ofrecen vistas al agua, parques y espacio para eventos al aire libre.">
+                        <img src="img.jpg/Paseo_Xolotlán.jpg" alt="Paseo Xolotlán en Managua">
+                    </button>
+                    <div class="content">
+                        <h3>Paseo Xolotlán</h3>
+                        <p>Zona costera urbana con parques, restaurantes y miradores a la laguna.</p>
+                        <div class="tags"><span class="tag">Naturaleza</span><span class="tag">Paseos</span></div>
+                    </div>
+                </article>
+
+                <!-- Card 4: Laguna de Tiscapa -->
+                <article class="card">
+                    <button class="img-btn" data-title="Laguna de Tiscapa" data-img="images/laguna_tiscapa.jpg" data-desc="Cráter de una antigua erupción que hoy es una laguna con miradores y monumentos históricos que narran parte de la historia local.">
+                        <img src="img.jpg/laguna.jpg" alt="Laguna de Tiscapa en Managua">
+                    </button>
+                    <div class="content">
+                        <h3>Laguna de Tiscapa</h3>
+                        <p>Miradores panorámicos y restos históricos que recuerdan la evolución de la ciudad.</p>
+                        <div class="tags"><span class="tag">Panorámico</span><span class="tag">Historia</span></div>
+                    </div>
+                </article>
+
+                <!-- Card 5: Catedral Vieja (Ruinas) -->
+                <article class="card">
+                    <button class="img-btn" data-title="Ruinas de la Antigua Catedral" data-img="images/ruinas_catedral.jpg" data-desc="Ruinas de la antigua catedral que sirven como testigo de los sismos pasados; es un sitio de reflexión e interés histórico.">
+                        <img src="img.jpg/ruinas.jpg" alt="Ruinas de la antigua catedral de Managua">
+                    </button>
+                    <div class="content">
+                        <h3>Ruinas de la Antigua Catedral</h3>
+                        <p>Testimonio de los terremotos del pasado y punto de interés histórico en la ciudad.</p>
+                        <div class="tags"><span class="tag">Patrimonio</span><span class="tag">Historia</span></div>
+                    </div>
+                </article>
+
+                <!-- Card 6: Parque Luis Alfonso Velásquez -->
+                <article class="card">
+                    <button class="img-btn" data-title="Parque Luis Alfonso Velásquez" data-img="images/parque_velasquez.jpg" data-desc="Espacio público con áreas verdes, zonas infantiles y eventos comunitarios; ideal para familias y actividades recreativas.">
+                        <img src="img.jpg/parque.jpg" alt="Parque Luis Alfonso Velásquez">
+                    </button>
+                    <div class="content">
+                        <h3>Parque Luis Alfonso Velásquez</h3>
+                        <p>Parque urbano popular para caminar, practicar deporte y disfrutar actividades al aire libre.</p>
+                        <div class="tags"><span class="tag">Recreación</span><span class="tag">Familia</span></div>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <small>Guía turística digital — Managua · Página de lugares emblemáticos</small>
+        </footer>
+    </div>
+
+    <!-- Lightbox (único elemento reutilizable) -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="panel" role="document">
+            <button id="closeLightbox" class="close-btn" aria-label="Cerrar">✕</button>
+            <img id="lbImage" src="" alt="">
+            <div class="meta">
+                <h3 id="lbTitle" style="margin:0 0 8px"></h3>
+                <p id="lbDesc" style="margin:0;color:var(--muted)"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,9 +1,11 @@
 :root{
             --bg:#f7f7f8; --card:#ffffff; --accent:#0066cc; --muted:#666;
             --maxw:1100px;
+            --muted: #000080; /* var(--muted) también pasa a azul marino */
         }
         *{box-sizing:border-box}
         body{
+            color: #000080; 
             margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
             background:var(--bg); color:#111; line-height:1.4;
         }
@@ -45,4 +47,8 @@
         @media (max-width:500px){
             .card img{height:140px}
             .lightbox img{height:260px}
+        }
+
+        nav a, nav a:visited, nav a.active {
+            color: #333 !important;
         }
