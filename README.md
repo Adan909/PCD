@@ -29,3 +29,7 @@ El objetivo es crear un sitio web estático que presente la información más re
 
 ---
 
+![Utilización del Copilot](Documentacion/img1.png)
+![Utilización del Copilot](Documentacion/img2.png)
+![Utilización del Copilot](Documentacion/img3.png)
+![Utilización del Copilot](Documentacion/img4.png)
