@@ -81,3 +81,26 @@
     // cerrar con Escape
     document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
 })();
+
+/* Reveal-on-scroll observer: aplica .is-revealed a elementos con .reveal-on-scroll y .fade-left */
+(function(){
+    const revealables = document.querySelectorAll('.reveal-on-scroll, .fade-left');
+    if(!revealables.length) return;
+
+    const ro = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('is-revealed');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.12});
+
+    revealables.forEach(el => ro.observe(el));
+
+    // pequeña animación inicial para el título del hero si existe
+    const heroTitle = document.querySelector('body.gastronomia-page h1.title');
+    if(heroTitle){
+        heroTitle.classList.add('pop-up');
+    }
+})();
